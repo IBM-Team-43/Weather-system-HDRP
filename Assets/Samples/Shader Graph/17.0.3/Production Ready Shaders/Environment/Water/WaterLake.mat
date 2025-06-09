@@ -124,7 +124,7 @@ Material:
     - _MaterialID: 1
     - _MaterialTypeMask: 2
     - _OpaqueCullMode: 2
-    - _OpaqueDepth: 4
+    - _OpaqueDepth: 1
     - _PerPixelSorting: 0
     - _QueueControl: 0
     - _QueueOffset: -50
