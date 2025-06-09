@@ -149,6 +149,12 @@
         },
         {
             "m_Id": "101f8f49839748808a4246ed2884cc72"
+        },
+        {
+            "m_Id": "1e85cf82bbdf44afa4b93a50bc4bf4e2"
+        },
+        {
+            "m_Id": "9b9ca59c3f9041fa80c83e170b66490c"
         }
     ],
     "m_GroupDatas": [],
@@ -739,16 +745,22 @@
                 "m_Id": "cb8024036ec44edcb7e03781766d9f60"
             },
             {
-                "m_Id": "bf34b9c2c58b4285b64f2b26f23d9d4d"
+                "m_Id": "3c39e4cfae54459fba0ba88cf04acba7"
             },
             {
-                "m_Id": "3c39e4cfae54459fba0ba88cf04acba7"
+                "m_Id": "bf34b9c2c58b4285b64f2b26f23d9d4d"
             },
             {
                 "m_Id": "a278fbca276c452491f7404124685f44"
             },
             {
                 "m_Id": "101f8f49839748808a4246ed2884cc72"
+            },
+            {
+                "m_Id": "1e85cf82bbdf44afa4b93a50bc4bf4e2"
+            },
+            {
+                "m_Id": "9b9ca59c3f9041fa80c83e170b66490c"
             }
         ]
     },
@@ -1340,6 +1352,40 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
+    "m_ObjectId": "1e85cf82bbdf44afa4b93a50bc4bf4e2",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "SurfaceDescription.NormalAlpha",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "9f3d7f69d50a46248ed753afc976c9d3"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedDescriptor": "SurfaceDescription.NormalAlpha"
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "1ea17e05bc5644159196403ce869dab3",
     "m_Id": 1,
@@ -1912,6 +1958,21 @@
     "m_StageCapability": 2,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "4b52298f603143daa9870b09320c6377",
+    "m_Id": 0,
+    "m_DisplayName": "MAOS Alpha",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "MAOSAlpha",
+    "m_StageCapability": 2,
+    "m_Value": 1.0,
+    "m_DefaultValue": 1.0,
     "m_Labels": []
 }
 
@@ -3471,6 +3532,40 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
+    "m_ObjectId": "9b9ca59c3f9041fa80c83e170b66490c",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "SurfaceDescription.MAOSAlpha",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "4b52298f603143daa9870b09320c6377"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedDescriptor": "SurfaceDescription.MAOSAlpha"
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
     "m_ObjectId": "9c18ac2f49084cd99fa6ae7b99cb6c5d",
     "m_Title": "",
@@ -3511,6 +3606,21 @@
         "z": 0.0,
         "w": 0.0
     },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "9f3d7f69d50a46248ed753afc976c9d3",
+    "m_Id": 0,
+    "m_DisplayName": "Normal Alpha",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "NormalAlpha",
+    "m_StageCapability": 2,
+    "m_Value": 1.0,
+    "m_DefaultValue": 1.0,
     "m_Labels": []
 }
 
