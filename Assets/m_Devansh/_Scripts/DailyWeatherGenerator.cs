@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DailyWeatherGenerator : MonoBehaviour
 {
@@ -16,13 +17,26 @@ public class DailyWeatherGenerator : MonoBehaviour
     public WeatherProbability[] seasonalWeatherChances;
 
     [Header("Current Weather")]
-    public WeatherType todayWeather;
+    private WeatherType _todayWeather;
+    public UnityEvent<WeatherType> onWeatherChanged;
+    public WeatherType todayWeather
+    {
+        get => _todayWeather;
+        set
+        {
+            if (_todayWeather == value) return;
+            _todayWeather = value;
+            onWeatherChanged?.Invoke(_todayWeather);
+        }
+    }
     public enum WeatherType
     {
         Sunny, Cloudy, Rainy, Snow, Hail, Thunder,
         Windy, Fog, Smog, DustStorm
     }
     private int lastCheckedDay = -1;
+    
+    
 
     void Update()
     {
@@ -83,5 +97,11 @@ public class DailyWeatherGenerator : MonoBehaviour
         }
         Debug.LogWarning("No weather probabilities set for season: " + season);
         return new WeatherProbability(); // default all 0
+    }
+    [ContextMenu("Reset Weather")]
+    public void ResetWeather()
+    {
+        todayWeather = WeatherType.DustStorm; 
+        lastCheckedDay = clock.dayOfYear; 
     }
 }
