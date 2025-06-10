@@ -24,8 +24,6 @@ public class RainController : MonoBehaviour
     [Header("Transition Settings")]
     public float transitionDuration = 3f;  // Time to fully start/stop rain
     
-    [Header("Sub Emitters (Optional)")]
-    public ParticleSystem[] subEmitters;  // For puddle and splatter effects
     
     [Header("Rain Sound")]
     public AudioSource rainAudioSource;    // Main rain sound
@@ -40,7 +38,7 @@ public class RainController : MonoBehaviour
     // Store original values
     private float originalEmissionRate;
     private int originalMaxParticles;
-    private float[] originalSubEmissionRates;
+
     private int[] originalSubMaxParticles;
     
     // Direction tracking
@@ -68,21 +66,7 @@ public class RainController : MonoBehaviour
         }
 
         // Store sub emitter original values
-        if (subEmitters != null && subEmitters.Length > 0)
-        {
-            originalSubEmissionRates = new float[subEmitters.Length];
-            originalSubMaxParticles = new int[subEmitters.Length];
-
-            for (int i = 0; i < subEmitters.Length; i++)
-            {
-                if (subEmitters[i] != null)
-                {
-                    originalSubEmissionRates[i] = subEmitters[i].emission.rateOverTime.constant;
-                    originalSubMaxParticles[i] = subEmitters[i].main.maxParticles;
-                }
-            }
-        }
-
+    
         // Setup rain audio
         SetupRainAudio();
 
@@ -170,18 +154,7 @@ public class RainController : MonoBehaviour
             Vector3 currentRotation = rainParticleSystem.transform.eulerAngles;
             rainParticleSystem.transform.rotation = Quaternion.Euler(direction, currentRotation.y, currentRotation.z);
             
-            // Also update sub emitters if they should follow the same direction
-            if (subEmitters != null)
-            {
-                foreach (var subEmitter in subEmitters)
-                {
-                    if (subEmitter != null)
-                    {
-                        Vector3 subCurrentRotation = subEmitter.transform.eulerAngles;
-                        subEmitter.transform.rotation = Quaternion.Euler(direction, subCurrentRotation.y, subCurrentRotation.z);
-                    }
-                }
-            }
+
         }
     }
     private void UpdateVelocity()
@@ -234,17 +207,6 @@ public class RainController : MonoBehaviour
         }
         
         // Enable sub emitters
-        if (subEmitters != null)
-        {
-            foreach (var subEmitter in subEmitters)
-            {
-                if (subEmitter != null && !subEmitter.isPlaying)
-                {
-                    subEmitter.Play();
-                }
-            }
-        }
-        
         // Start rain audio
         if (rainAudioSource != null && rainSoundClip != null)
         {
@@ -309,21 +271,7 @@ public class RainController : MonoBehaviour
             main.maxParticles = Mathf.RoundToInt(maxParticles * intensity);
         }
         
-        // Sub emitters
-        if (subEmitters != null)
-        {
-            for (int i = 0; i < subEmitters.Length; i++)
-            {
-                if (subEmitters[i] != null && i < originalSubEmissionRates.Length)
-                {
-                    var emission = subEmitters[i].emission;
-                    var main = subEmitters[i].main;
-                    
-                    emission.rateOverTime = originalSubEmissionRates[i] * intensity;
-                    main.maxParticles = Mathf.RoundToInt(originalSubMaxParticles[i] * intensity);
-                }
-            }
-        }
+    
         
         // Update rain sound volume
         if (rainAudioSource != null && fadeWithIntensity)
@@ -341,17 +289,6 @@ public class RainController : MonoBehaviour
             emission.rateOverTime = 0;
         }
         
-        if (subEmitters != null)
-        {
-            foreach (var subEmitter in subEmitters)
-            {
-                if (subEmitter != null)
-                {
-                    var emission = subEmitter.emission;
-                    emission.rateOverTime = 0;
-                }
-            }
-        }
         
         // Stop rain audio
         if (rainAudioSource != null)

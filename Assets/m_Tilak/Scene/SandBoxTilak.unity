@@ -6431,7 +6431,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 28.97
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -10619,7 +10619,6 @@ MonoBehaviour:
   maxParticles: 100000
   _gravitymodifier: 2
   transitionDuration: 5
-  subEmitters: []
   rainAudioSource: {fileID: 2017076517}
   rainSoundClip: {fileID: 8300000, guid: 24fdb9f2039710a4197f4a4ef33f1891, type: 3}
   maxRainVolume: 0.7
