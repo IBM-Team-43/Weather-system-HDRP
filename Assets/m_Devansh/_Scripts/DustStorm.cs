@@ -38,8 +38,9 @@ public class DustStorm : MonoBehaviour
         bool enableVolumetricFog;
         private FogColorParameter colorMode;
         ColorParameter TintColor;
-        private bool volumetric;
+        float mipFogMaxMipLevel;
         private Color albedo;
+        private float volumetricFogDistance;
         float anisotropy;
         private float multipleScatteringIntensity;
         public FogSettings(Fog fog)
@@ -53,8 +54,9 @@ public class DustStorm : MonoBehaviour
             enableVolumetricFog = fog.enableVolumetricFog.value;
             colorMode = fog.colorMode;
             TintColor = fog.tint;
-            volumetric = fog.enableVolumetricFog.value;
+            mipFogMaxMipLevel = fog.mipFogMaxMip.value;
             albedo = fog.albedo.value;
+            volumetricFogDistance = fog.depthExtent.value;
             anisotropy = fog.anisotropy.value;
             multipleScatteringIntensity = fog.multipleScatteringIntensity.value;
         }
@@ -66,8 +68,10 @@ public class DustStorm : MonoBehaviour
             fog.baseHeight.value = baseHeight;
             fog.maximumHeight.value = maximumHeight;
             fog.tint = TintColor;
+            fog.mipFogMaxMip.value = mipFogMaxMipLevel;
             fog.enableVolumetricFog.value = enableVolumetricFog;
             fog.albedo.value = albedo;
+            fog.depthExtent.value = volumetricFogDistance;
             fog.anisotropy.value = anisotropy;
             fog.multipleScatteringIntensity.value = multipleScatteringIntensity;
         }
@@ -79,6 +83,8 @@ public class DustStorm : MonoBehaviour
             Tween.Custom(fog.anisotropy.value, anisotropy, duration, newVal => fog.anisotropy.value = newVal);
             Tween.Custom(fog.multipleScatteringIntensity.value, multipleScatteringIntensity, duration, newVal => fog.multipleScatteringIntensity.value = newVal);
             Tween.Custom(fog.albedo.value, albedo, duration, onValueChange: newVal => fog.albedo.value = newVal);
+            Tween.Custom(fog.depthExtent.value,volumetricFogDistance,duration, newVal => fog.depthExtent.value = newVal);
+            Tween.Custom(fog.mipFogMaxMip.value, mipFogMaxMipLevel, duration, newVal => fog.mipFogMaxMip.value = newVal);
             // Non-float or non-tweenable properties should be set immediately or handled differently
             fog.enabled.value = state;
             fog.active = active;
@@ -119,7 +125,7 @@ public class DustStorm : MonoBehaviour
     {
         if (!_isEnabled) return;
         _isEnabled = false;
-        _cachedGlobalFog.ApplyTo(_globalFog);
+        _cachedGlobalFog.LerpFogSettings(_globalFog,fadeDuration);
     }
 
     
