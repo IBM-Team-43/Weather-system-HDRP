@@ -26,7 +26,7 @@ Material:
   m_Name: DustMaterial
   m_Shader: {fileID: -6465566751694194690, guid: 2ac176d02e8224840b08f8f6fb614447, type: 3}
   m_Parent: {fileID: -876546973899608171, guid: 2ac176d02e8224840b08f8f6fb614447, type: 3}
-  m_ModifiedSerializedProperties: 2
+  m_ModifiedSerializedProperties: 18
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
   m_InvalidKeywords:

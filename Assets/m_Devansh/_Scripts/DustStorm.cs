@@ -119,7 +119,7 @@ public class DustStorm : MonoBehaviour
     {
         if (!_isEnabled) return;
         _isEnabled = false;
-        _cachedGlobalFog.ApplyTo(_globalFog);
+        _cachedGlobalFog.LerpFogSettings(_globalFog,fadeDuration);
     }
 
     
