@@ -9,21 +9,25 @@ public class RainController : MonoBehaviour
 
     [SerializeField]
     [Range(-45, 145)]
-
     public int direction;
 
     [Range(10, 100)]
-     public int minVelocity;
+    public int minVelocity;
     [Range(20, 200)]
     public int maxVelocity;
+    
     [Header("Emission Control")]
     public float maxEmissionRate = 10000f;
     public int maxParticles = 100000;
-
     public int _gravitymodifier = 2;
+    
+    [Header("Shader Control")]
+    public GameObject groundGameObject;  // Assign your ground GameObject
+    private Material groundMaterial;  // Reference to the ground material
+    private int opacityPropertyID;
+    
     [Header("Transition Settings")]
     public float transitionDuration = 3f;  // Time to fully start/stop rain
-    
     
     [Header("Rain Sound")]
     public AudioSource rainAudioSource;    // Main rain sound
@@ -38,13 +42,13 @@ public class RainController : MonoBehaviour
     // Store original values
     private float originalEmissionRate;
     private int originalMaxParticles;
-
     private int[] originalSubMaxParticles;
     
     // Direction tracking
     private int previousDirection;
     private int previousminvalue;
     private int previousmaxvalue;
+    
 
     
     private void Start()
@@ -65,14 +69,24 @@ public class RainController : MonoBehaviour
             if (maxParticles == 0) maxParticles = originalMaxParticles;
         }
 
-        // Store sub emitter original values
-    
+        // Initialize shader property and get ground material
+        if (groundGameObject != null)
+        {
+            Renderer groundRenderer = groundGameObject.GetComponent<Renderer>();
+            if (groundRenderer != null)
+            {
+                groundMaterial = groundRenderer.material;
+                opacityPropertyID = Shader.PropertyToID("_opacity");
+                groundMaterial.SetFloat(opacityPropertyID, 0f);
+            }
+        }
+
         // Setup rain audio
         SetupRainAudio();
 
-        // Initialize direction
+        // Initialize direction and velocity
         previousminvalue = minVelocity;
-        previousmaxvalue= maxVelocity;
+        previousmaxvalue = maxVelocity;
         UpdateVelocity();
         previousDirection = direction;
         UpdateRainDirection();
@@ -105,18 +119,20 @@ public class RainController : MonoBehaviour
     private void Update()
     {
         var main = rainParticleSystem.main;
-        main.gravityModifier=_gravitymodifier;
+        main.gravityModifier = _gravitymodifier;
+        
         // Check if direction has changed
         if (direction != previousDirection)
         {
             UpdateRainDirection();
             previousDirection = direction;
         }
+        
         if (minVelocity != previousminvalue || maxVelocity != previousmaxvalue)
         {
             UpdateVelocity();
             previousminvalue = minVelocity;
-             previousmaxvalue = maxVelocity;
+            previousmaxvalue = maxVelocity;
         }
         
         // Keyboard shortcut for testing (R key)
@@ -153,18 +169,31 @@ public class RainController : MonoBehaviour
             // Set the X-axis rotation based on the direction value
             Vector3 currentRotation = rainParticleSystem.transform.eulerAngles;
             rainParticleSystem.transform.rotation = Quaternion.Euler(direction, currentRotation.y, currentRotation.z);
-            
-
         }
     }
+    
     private void UpdateVelocity()
     {
         if (rainParticleSystem != null)
         {
             var velocityModule = rainParticleSystem.velocityOverLifetime;
             velocityModule.z = new ParticleSystem.MinMaxCurve(maxVelocity, minVelocity);
-            
         }
+    }
+    
+    // Method to update shader opacity
+    private void SetShaderOpacity(float opacity)
+    {
+        if (groundMaterial != null)
+        {
+            groundMaterial.SetFloat(opacityPropertyID, Mathf.Clamp01(opacity));
+        }
+    }
+    
+    // Method to get current opacity value
+    private float GetCurrentOpacity()
+    {
+        return groundMaterial?.GetFloat(opacityPropertyID) ?? 0f;
     }
     
     public void ToggleRain()
@@ -206,7 +235,6 @@ public class RainController : MonoBehaviour
             rainParticleSystem.Play();
         }
         
-        // Enable sub emitters
         // Start rain audio
         if (rainAudioSource != null && rainSoundClip != null)
         {
@@ -221,7 +249,7 @@ public class RainController : MonoBehaviour
             float progress = elapsedTime / transitionDuration;
             float easeProgress = EaseInOut(progress);
             
-            // Gradually increase emission rate and max particles
+            // Gradually increase emission rate, max particles, and shader opacity
             SetRainIntensity(easeProgress);
             
             elapsedTime += Time.deltaTime;
@@ -244,7 +272,7 @@ public class RainController : MonoBehaviour
             float progress = elapsedTime / transitionDuration;
             float easeProgress = EaseInOut(progress);
             
-            // Gradually decrease emission rate and max particles
+            // Gradually decrease emission rate, max particles, and shader opacity
             SetRainIntensity(1f - easeProgress);
             
             elapsedTime += Time.deltaTime;
@@ -271,7 +299,8 @@ public class RainController : MonoBehaviour
             main.maxParticles = Mathf.RoundToInt(maxParticles * intensity);
         }
         
-    
+        // Update shader opacity
+        SetShaderOpacity(intensity);
         
         // Update rain sound volume
         if (rainAudioSource != null && fadeWithIntensity)
@@ -289,6 +318,8 @@ public class RainController : MonoBehaviour
             emission.rateOverTime = 0;
         }
         
+        // Set shader opacity to 0
+        SetShaderOpacity(0f);
         
         // Stop rain audio
         if (rainAudioSource != null)
@@ -322,6 +353,9 @@ public class RainController : MonoBehaviour
     // Audio-specific properties
     public float CurrentRainVolume => rainAudioSource?.volume ?? 0f;
     
+    // Shader opacity property
+    public float CurrentShaderOpacity => GetCurrentOpacity();
+    
     // Direction property for external access
     public int RainDirection
     {
@@ -351,5 +385,11 @@ public class RainController : MonoBehaviour
                 rainAudioSource.Play();
             }
         }
+    }
+    
+    // Method to manually set shader opacity (useful for testing or external control)
+    public void SetOpacity(float opacity)
+    {
+        SetShaderOpacity(opacity);
     }
 }
