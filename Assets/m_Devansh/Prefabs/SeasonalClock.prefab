@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5828739011879750449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8652982653516882612}
+  - component: {fileID: 8136245771063286020}
+  - component: {fileID: 1859507006888813130}
+  m_Layer: 0
+  m_Name: SeasonalClock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8652982653516882612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5828739011879750449}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8136245771063286020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5828739011879750449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85d497e5b056f14cb0e79b704bc8140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeOfDay: 12
+  dayOfYear: 1
+  dayLengthInSeconds: 60
+  sun: {fileID: 0}
+  sunRotationAxis: {x: 1, y: 0, z: 0}
+  timeText: {fileID: 0}
+  seasonText: {fileID: 0}
+  monthText: {fileID: 0}
+  customSeasons:
+  - season: 0
+    startDay: 80
+    endDay: 171
+  - season: 1
+    startDay: 172
+    endDay: 265
+  - season: 2
+    startDay: 266
+    endDay: 354
+  - season: 3
+    startDay: 355
+    endDay: 79
+  currentSeason: 0
+  currentMonth: 0
+--- !u!114 &1859507006888813130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5828739011879750449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c9fd3641e894574e826db4471a9facf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clock: {fileID: 8136245771063286020}
+  seasonalWeatherChances:
+  - season: 0
+    weatherData: {fileID: 11400000, guid: 7af02cea259dca74ab4a46b3c66a20fe, type: 2}
+  - season: 1
+    weatherData: {fileID: 11400000, guid: 29047e6effacabc4ea8a69adbb54da2d, type: 2}
+  - season: 2
+    weatherData: {fileID: 11400000, guid: defd83057c1a1f74294369769bda53f0, type: 2}
+  - season: 3
+    weatherData: {fileID: 11400000, guid: 6bf59d4fd1fb362488f9724ed89ee603, type: 2}
+  todayWeather: 0
