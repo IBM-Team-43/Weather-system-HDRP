@@ -386,11 +386,11 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {r: 0.8773585, g: 0.8069347, b: 0.40281233, a: 1}
   tint:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 1.8544642, g: 1.8544642, b: 1.8544642, a: 1}
   maxFogDistance:
     m_OverrideState: 0
-    m_Value: 5000
+    m_Value: 0
   mipFogMaxMip:
     m_OverrideState: 0
     m_Value: 0.5
@@ -402,19 +402,19 @@ MonoBehaviour:
     m_Value: 1000
   baseHeight:
     m_OverrideState: 1
-    m_Value: 5.99
+    m_Value: 0
   maximumHeight:
     m_OverrideState: 0
     m_Value: 124.2
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 109.6
+    m_Value: 200
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.94751257, b: 0.83647794, a: 1}
+    m_Value: {r: 1, g: 0.94751257, b: 0.83647794, a: 0.60784316}
   globalLightProbeDimmer:
     m_OverrideState: 1
     m_Value: 1
@@ -444,10 +444,10 @@ MonoBehaviour:
     m_Value: 64
   m_VolumetricFogBudget:
     m_OverrideState: 0
-    m_Value: 0.33
+    m_Value: 0.5
   m_ResolutionDepthRatio:
     m_OverrideState: 0
-    m_Value: 0.666
+    m_Value: 0.5
   directionalLightsOnly:
     m_OverrideState: 0
     m_Value: 0
@@ -599,10 +599,10 @@ MonoBehaviour:
     m_Value: 3.11
   limitMin:
     m_OverrideState: 1
-    m_Value: 5.5409927
+    m_Value: 12.446255
   limitMax:
     m_OverrideState: 1
-    m_Value: 13.578639
+    m_Value: 15
   curveMap:
     m_OverrideState: 0
     m_Value:
