@@ -1,13 +1,12 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
-using UnityEngine.Serialization;
 using PrimeTween;
 
 public class DustStorm : MonoBehaviour
 {
-    [FormerlySerializedAs("DailyWeatherGenerator")] public DailyWeatherGenerator dailyWeatherGenerator;
-    [FormerlySerializedAs("WeatherType")] public DailyWeatherGenerator.WeatherType weatherType = DailyWeatherGenerator.WeatherType.DustStorm;
+    public DailyWeatherGenerator dailyWeatherGenerator;
+    public DailyWeatherGenerator.WeatherType weatherType = DailyWeatherGenerator.WeatherType.DustStorm;
     public Volume volume;
     private VolumeProfile _globalVolumeProfile;
     private Fog _globalFog;
@@ -15,6 +14,8 @@ public class DustStorm : MonoBehaviour
     
     [SerializeField] private VolumeProfile fogVolume;
     [SerializeField] private float fadeDuration = 1f;
+    
+    [SerializeField] private LocalVolumetricFog localFog;
     private Fog _fog;
     private FogSettings fog
     {
@@ -77,19 +78,20 @@ public class DustStorm : MonoBehaviour
         }
         public void LerpFogSettings(Fog fog, float duration)
         {
+            fog.enabled.value = state;
+            fog.active = active;
+            fog.enableVolumetricFog.value = enableVolumetricFog;
             Tween.Custom(fog.meanFreePath.value, meanFreePath, duration, newVal => fog.meanFreePath.value = newVal);
             Tween.Custom(fog.baseHeight.value, baseHeight, duration, newVal => fog.baseHeight.value = newVal);
             Tween.Custom(fog.maximumHeight.value, maximumHeight, duration, newVal => fog.maximumHeight.value = newVal);
+            Tween.Custom(fog.tint.value, TintColor.value, duration, newVal => fog.tint.value = newVal);
             Tween.Custom(fog.anisotropy.value, anisotropy, duration, newVal => fog.anisotropy.value = newVal);
             Tween.Custom(fog.multipleScatteringIntensity.value, multipleScatteringIntensity, duration, newVal => fog.multipleScatteringIntensity.value = newVal);
-            Tween.Custom(fog.albedo.value, albedo, duration, onValueChange: newVal => fog.albedo.value = newVal);
+            Tween.Custom(fog.albedo.value, albedo, duration,newVal => fog.albedo.value = newVal);
             Tween.Custom(fog.depthExtent.value,volumetricFogDistance,duration, newVal => fog.depthExtent.value = newVal);
             Tween.Custom(fog.mipFogMaxMip.value, mipFogMaxMipLevel, duration, newVal => fog.mipFogMaxMip.value = newVal);
             // Non-float or non-tweenable properties should be set immediately or handled differently
-            fog.enabled.value = state;
-            fog.active = active;
-            fog.tint = TintColor;
-            fog.enableVolumetricFog.value = enableVolumetricFog;
+            
         }
     }
     
@@ -106,7 +108,7 @@ public class DustStorm : MonoBehaviour
     private void OnDisable()
     {
         dailyWeatherGenerator.onWeatherChanged.RemoveListener(OnWeatherChanged);
-        DisableDustStorm();
+        _cachedGlobalFog.ApplyTo(_globalFog);
     }
 
     private void OnWeatherChanged(DailyWeatherGenerator.WeatherType arg0)
@@ -127,12 +129,10 @@ public class DustStorm : MonoBehaviour
         _isEnabled = false;
         _cachedGlobalFog.LerpFogSettings(_globalFog,fadeDuration);
     }
-
-    
+   
     private void EnableDustStorm()
     {
         if(_isEnabled) return;
-        Debug.Log("lol");
         _isEnabled = true;
         if (!_globalVolumeProfile.TryGet(out _globalFog))
             _globalFog =_globalVolumeProfile.Add<Fog>();

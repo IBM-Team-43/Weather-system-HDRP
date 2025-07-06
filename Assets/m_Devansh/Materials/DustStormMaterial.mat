@@ -69,20 +69,20 @@ Material:
     - _CullModeForward: 2
     - _DepthOffsetEnable: 0
     - _DetailSpeed: 1
-    - _Detail_Tiling: 74.98
+    - _Detail_Tiling: 0.1
     - _DoubleSidedEnable: 0
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
     - _EnableFogOnTransparent: 1
-    - _Flatten: 2
+    - _Flatten: 1.5
     - _Float: 4
-    - _FogVolumeAlphaBlendOp: 4
-    - _FogVolumeBlendMode: 4
-    - _FogVolumeColorBlendOp: 4
-    - _FogVolumeDstAlphaBlend: 1
-    - _FogVolumeDstColorBlend: 1
-    - _FogVolumeFogDistanceProperty: 1.9
+    - _FogVolumeAlphaBlendOp: 0
+    - _FogVolumeBlendMode: 0
+    - _FogVolumeColorBlendOp: 0
+    - _FogVolumeDstAlphaBlend: 0
+    - _FogVolumeDstColorBlend: 0
+    - _FogVolumeFogDistanceProperty: 2
     - _FogVolumeSrcAlphaBlend: 1
     - _FogVolumeSrcColorBlend: 1
     - _Height_Tiling: 1.84
@@ -96,7 +96,7 @@ Material:
     - _SrcBlend: 1
     - _SurfaceType: 0
     - _TIling: 1
-    - _Tiling: 0.1
+    - _Tiling: 0.05
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
     - _TransparentDepthPostpassEnable: 0
@@ -112,7 +112,7 @@ Material:
     - _ZWrite: 1
     - _alpha: 1
     m_Colors:
-    - _Bottom_Color: {r: 0.7433963, g: 0.27272835, b: 0.03787107, a: 1}
+    - _Bottom_Color: {r: 1, g: 0.858221, b: 0.50377357, a: 1}
     - _Color: {r: 1, g: 0.92878336, b: 0.83647794, a: 0}
     - _Color2: {r: 0.7169812, g: 0.55657834, b: 0.34270793, a: 1}
     - _DetailDirection: {r: 0, g: 0, b: 1, a: 0}
@@ -121,7 +121,7 @@ Material:
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _FogVolumeSingleScatteringAlbedo: {r: 1, g: 1, b: 1, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Top_Color: {r: 1, g: 0.59813553, b: 0.2924527, a: 1}
+    - _Top_Color: {r: 1, g: 0.8588236, b: 0.5019608, a: 1}
     - _Vector3: {r: 1, g: 0, b: 0, a: 0}
     - _Wind_Direction: {r: -1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
