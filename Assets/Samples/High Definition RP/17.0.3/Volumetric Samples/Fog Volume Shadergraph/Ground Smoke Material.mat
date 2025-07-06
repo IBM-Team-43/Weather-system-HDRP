@@ -82,7 +82,7 @@ Material:
     - _FogVolumeColorBlendOp: 0
     - _FogVolumeDstAlphaBlend: 1
     - _FogVolumeDstColorBlend: 1
-    - _FogVolumeFogDistanceProperty: 0.18
+    - _FogVolumeFogDistanceProperty: 2
     - _FogVolumeSrcAlphaBlend: 1
     - _FogVolumeSrcColorBlend: 1
     - _Height_Tiling: 1.84
