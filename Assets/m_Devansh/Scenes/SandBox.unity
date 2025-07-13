@@ -5336,7 +5336,7 @@ Transform:
   m_GameObject: {fileID: 204174605}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 0}
+  m_LocalPosition: {x: -98.7, y: 50, z: 26.2}
   m_LocalScale: {x: 2.948, y: 1, z: 2.2326}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10103,7 +10103,7 @@ Transform:
   m_GameObject: {fileID: 405502701}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 65.6, z: 0}
+  m_LocalPosition: {x: -98.7, y: 66, z: 26.2}
   m_LocalScale: {x: 8.238795, y: 9.067601, z: 1.9085355}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11025,7 +11025,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -15100,11 +15100,27 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: currentHour
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
       propertyPath: currentYear
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
       propertyPath: currentMonth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: currentMinute
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: currentSecond
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: currentDayOfYear
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}

@@ -8,10 +8,12 @@ public class Thunderstorm : WeatherBase
     protected override void StartWeather()
     {
         hailstormEffect.SetActive(true);
+        TurnOnLightning();
     }
     protected override void StopWeather()
     {
         hailstormEffect.SetActive(false);
+        TurnOffLightning();
     }
     void TurnOnLightning()
     {
