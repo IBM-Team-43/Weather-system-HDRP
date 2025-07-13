@@ -5,7 +5,7 @@ public abstract class WeatherBase : MonoBehaviour
     {
         [SerializeField]
         public WeatherType weatherType;
-        protected bool IsEnabled;
+        protected bool IsEnabled = false;
         
         protected abstract void StartWeather();
         protected abstract void StopWeather();

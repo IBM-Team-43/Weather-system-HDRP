@@ -9,10 +9,8 @@ public class DailyWeatherGenerator : MonoBehaviour
         public SeasonalClock.Season season;
        public SeasonWeatherData weatherData;
     }
-
     [Header("Dependencies")]
     public SeasonalClock clock;
-
     [Header("Weather Probabilities By Season")]
     public WeathersProbability[] seasonalWeatherChances;
 
@@ -30,7 +28,6 @@ public class DailyWeatherGenerator : MonoBehaviour
         }
     }
     private int lastCheckedDay = -1;
-    
     void Update()
     {
         if (clock.currentDayOfYear != lastCheckedDay)
@@ -39,7 +36,6 @@ public class DailyWeatherGenerator : MonoBehaviour
             GenerateDailyWeather();
         }
     }
-
     void GenerateDailyWeather()
     {
         var season = clock.currentSeason;
@@ -66,7 +62,6 @@ public class DailyWeatherGenerator : MonoBehaviour
         // Fallback
         todayWeather = WeatherType.Sunny;
     }
-
     WeathersProbability GetSeasonProbabilities(SeasonalClock.Season season)
     {
         foreach (var p in seasonalWeatherChances)

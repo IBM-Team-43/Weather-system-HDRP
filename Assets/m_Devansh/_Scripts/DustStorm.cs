@@ -68,7 +68,7 @@ public class DustStorm : WeatherBase
         }
         public void LerpFogSettings(Fog fog, float duration)
         {
-            fog.enabled.value = _state;
+            fog.enabled.value = true;
             fog.active = _active;
             fog.enableVolumetricFog.value = _enableVolumetricFog;
             Tween.Custom(fog.meanFreePath.value, _meanFreePath, duration, newVal => fog.meanFreePath.value = newVal);
@@ -102,6 +102,7 @@ public class DustStorm : WeatherBase
             fogVolume.TryGet(out _fog);
         }
         fog = new FogSettings(_fog);
+        Debug.Log("Dust Storm Weather Enabled");
         fog.LerpFogSettings(_globalFog,fadeDuration);
     }
     protected override void StopWeather()

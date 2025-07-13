@@ -606,11 +606,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc6566b8df59fe46a91ef114b531122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dailyWeatherGenerator: {fileID: 351886361}
   weatherType: 9
   volume: {fileID: 113922469}
   fogVolume: {fileID: 11400000, guid: 3e0d1e0865db15f47a763401ad48dc99, type: 2}
   fadeDuration: 100
+  localFog: {fileID: 0}
 --- !u!4 &613890217
 Transform:
   m_ObjectHideFlags: 0
@@ -721,11 +721,39 @@ PrefabInstance:
       objectReference: {fileID: 95661341}
     - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
       propertyPath: timeOfDay
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: currentDay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: currentHour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: currentYear
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: currentMonth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: currentMinute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: currentSecond
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: currentDayOfYear
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8652982653516882612, guid: e5f61ac1eda2769498879da72604e918, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5790,6 +5818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396ab0fbbe90b514e8a02c806001755e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weatherType: 0
   particleSystem: {fileID: 1184284601}
 --- !u!4 &1654561801
 Transform:
@@ -6305,34 +6334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e776a46bd497b2247994e599f1a3c8a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boost: 3.5
-  positionLerpTime: 0.2
-  mouseSensitivityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 5
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 2.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  rotationLerpTime: 0.01
-  invertY: 0
 --- !u!20 &1845212014
 Camera:
   m_ObjectHideFlags: 0

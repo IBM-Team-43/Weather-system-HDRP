@@ -2,6 +2,7 @@ using System;
 using nminhhoangit.SunCalculator;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class SeasonalClock : MonoBehaviour
 {
@@ -38,7 +39,8 @@ public class SeasonalClock : MonoBehaviour
     public Season currentSeason { get; private set; }
 
     private float timeSpeed => 24f / dayLengthInSeconds;
-
+    
+    public UnityEvent<DateTime> onTimeChanged;
     private void Awake()
     {
         currentDateTime = new DateTime(currentYear, currentMonth, currentDay, 
@@ -58,14 +60,13 @@ public class SeasonalClock : MonoBehaviour
     {
         ProgressTime();
         UpdateTimeComponents();
-        UpdateEnvironment();
         UpdateUI();
     }
     private void ProgressTime()
     {
         double elapsedSeconds = Time.deltaTime * timeSpeed * 3600f;
-        
         currentDateTime = currentDateTime.AddSeconds(elapsedSeconds);
+        onTimeChanged?.Invoke(currentDateTime);
     }
     private void UpdateTimeComponents()
     {
@@ -77,19 +78,6 @@ public class SeasonalClock : MonoBehaviour
         currentMinute = currentDateTime.Minute;
         currentSecond = currentDateTime.Second;
         currentDayOfYear = currentDateTime.DayOfYear;
-    }
-    private void UpdateEnvironment()
-    {
-        if (_sunCalculator)
-        {
-            _sunCalculator.UpdateDateTimeInputDatas(currentDateTime);
-        }
-        else if(sun)
-        {
-            float timeOfDay = currentHour + (currentMinute / 60f) + (currentSecond / 3600f);
-            float sunAngle = (timeOfDay / 24f) * 360f;
-            sun.transform.rotation = Quaternion.Euler(sunAngle, 0f, 0f);
-        }
     }
     private void UpdateUI()
     {
@@ -115,7 +103,6 @@ public class SeasonalClock : MonoBehaviour
         }
         return Season.Winter;
     }
-
     [System.Serializable]
     public struct SeasonRange
     {

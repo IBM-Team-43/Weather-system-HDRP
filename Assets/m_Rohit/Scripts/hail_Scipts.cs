@@ -12,7 +12,6 @@ public class hail_Scripts : MonoBehaviour
             if (hailstormEffect != null)
             {
                 hailstormEffect.SetActive(true);
-                Debug.Log("Hailstorm ON");
             }
         }
 
@@ -22,8 +21,9 @@ public class hail_Scripts : MonoBehaviour
             if (hailstormEffect != null)
             {
                 hailstormEffect.SetActive(false);
-                Debug.Log("Hailstorm OFF");
             }
         }
     }
+    
+    
 }
