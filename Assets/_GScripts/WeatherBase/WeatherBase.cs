@@ -1,38 +1,41 @@
 using UnityEngine;
 
-namespace m_Devansh.WeatherBase
-{
-    public abstract class WeatherBase : MonoBehaviour
-    {
-        private WeatherType weatherType;
-        private bool _isEnabled;
 
-        protected virtual void OnWeatherChanged(WeatherType arg0)
+public abstract class WeatherBase : MonoBehaviour
+    {
+        [SerializeField]
+        public WeatherType weatherType;
+        protected bool IsEnabled;
+        
+        protected abstract void StartWeather();
+        protected abstract void StopWeather();
+        public void EnableWeather()
         {
-            if (arg0 == weatherType)
-            {
-                EnableWeather();
-            }
-            else
-            {
-                DisableWeather();
-            }
+            if (!CanEnableWeather()) return;
+            IsEnabled = true;
+            StartWeather();
         }
-        protected virtual void DisableWeather()
+        private bool CanEnableWeather()
         {
-            if (!_isEnabled) return;
-            _isEnabled = false;
+            return !IsEnabled;
         }
-        protected virtual void EnableWeather()
+        public void DisableWeather()
         {
-            if(_isEnabled) return;
+            if (!CanDisableWeather()) return; 
+            IsEnabled = false;
+            StopWeather();
         }
+        private bool CanDisableWeather()
+        {
+            return IsEnabled;
+        }
+        
     }
     
-}
+
 
 public enum WeatherType
 {
-    Sunny, Cloudy, Rainy, Snow, Hail, Thunder,
-    Windy, Fog, Smog, DustStorm,Others
+    Sunny, Rainy, Snow, Thunder,
+    Fog, DustStorm
 }

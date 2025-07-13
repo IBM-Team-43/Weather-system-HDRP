@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class ToggleParticle: MonoBehaviour
+public class ToggleParticle: WeatherBase
 {
     // Reference to the Particle System
     public ParticleSystem particleSystem;
 
     // Track if the particle system is playing
     private bool isPlaying = false;
-
     void Start()
     {
         // Auto-assign if not manually set in inspector
@@ -22,23 +21,7 @@ public class ToggleParticle: MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        // Toggle on spacebar press
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (isPlaying)
-            {
-                StopParticles();
-            }
-            else
-            {
-                StartParticles();
-            }
-        }
-    }
-
-    public void StartParticles()
+    protected override void StartWeather()
     {
         if (particleSystem != null)
         {
@@ -47,7 +30,7 @@ public class ToggleParticle: MonoBehaviour
         }
     }
 
-    public void StopParticles()
+    protected override void StopWeather()
     {
         if (particleSystem != null)
         {
