@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public class RainController : MonoBehaviour
+public class RainController : WeatherBase
 {
     [Header("Rain Settings")]
     public ParticleSystem rainParticleSystem;
@@ -135,31 +135,13 @@ public class RainController : MonoBehaviour
             previousmaxvalue = maxVelocity;
         }
         
-        // Keyboard shortcut for testing (R key)
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ToggleRain();
-        }
-        
         // Ensure cursor stays visible (safety check)
         if (!Cursor.visible)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
-        
-        // Performance monitoring (F4 key)
-        if (Input.GetKeyDown(KeyCode.F4))
-        {
-            if (rainParticleSystem != null)
-            {
-                Debug.Log($"Rain Particles: {rainParticleSystem.particleCount}/{rainParticleSystem.main.maxParticles}");
-                Debug.Log($"Emission Rate: {rainParticleSystem.emission.rateOverTime.constant}");
-                Debug.Log($"Rain Volume: {rainAudioSource?.volume:F2}");
-                Debug.Log($"Rain Direction: {direction}° (X-axis rotation)");
-                Debug.Log($"FPS: {1f / Time.unscaledDeltaTime:F1}");
-            }
-        }
+     
     }
     
     private void UpdateRainDirection()
@@ -196,28 +178,15 @@ public class RainController : MonoBehaviour
         return groundMaterial?.GetFloat(opacityPropertyID) ?? 0f;
     }
     
-    public void ToggleRain()
-    {
-        if (isTransitioning) return;
-
-        if (isRaining)
-        {
-            StopRain();
-        }
-        else
-        {
-            StartRain();
-        }
-    }
     
-    public void StartRain()
+    protected override void StartWeather()
     {
         if (isTransitioning || isRaining) return;
         
         StartCoroutine(GraduallyStartRain());
     }
     
-    public void StopRain()
+    protected override void StopWeather()
     {
         if (isTransitioning || !isRaining) return;
         

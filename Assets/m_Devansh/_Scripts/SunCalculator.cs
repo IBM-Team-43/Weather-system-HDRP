@@ -8,7 +8,7 @@ namespace nminhhoangit.SunCalculator
     {
         [Range(3f, 100f)]
         public float offsetDistance = 10f;
-
+        public Transform pillar;
         [SerializeField]
         private float m_Latitude;
         [SerializeField]
@@ -98,12 +98,22 @@ namespace nminhhoangit.SunCalculator
                 Vector3 objectPosition = CalculateObjectPosition((float)hor.azimuth, (float)hor.altitude);
 
                 // Update Sun's position & light with pillar
+                if (pillar != null)
+                {
+                    // Offset distance position from pillar position
+                    objectPosition = objectPosition * offsetDistance + pillar.position;
                
+                    // Point light direction to the pillar
+                    transform.LookAt(pillar);
+                }
+                else
+                {
                     // Offset distance position
                     objectPosition = objectPosition * offsetDistance;
 
                     // Point light direction to the center of the scene instead
                     transform.LookAt(Vector3.zero, Vector3.up);
+                }
 
                 // Set object position
                 transform.position = objectPosition;

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class SnowManager : MonoBehaviour
+public class SnowManager : WeatherBase
 {
     [Header("Snow Shader & Speed")]
     public float snowLevel = 0f;
@@ -31,20 +31,8 @@ public class SnowManager : MonoBehaviour
     isSnowing = false;
     snowLevel = 0f;
     Shader.SetGlobalFloat("_SnowLevel", 0f);
-
-    // Hook up UI
-    snowSpeedSlider.onValueChanged.AddListener(UpdateSnowSpeed);
-    startSnowButton.onClick.AddListener(StartSnow);
-    stopSnowButton.onClick.AddListener(StopSnow);
-    dayNightToggleButton.onClick.AddListener(ToggleDayNight);
-
-    UpdateSnowSpeed(snowSpeedSlider.value);
-
-    // Optional: Prevent snow speed slider from being usable until snow starts
-    snowSpeedSlider.interactable = false;
+    UpdateSnowSpeed(100);
 }
-
-
     void Update()
     {
         if (isSnowing && snowLevel < 1f)
@@ -63,20 +51,15 @@ public class SnowManager : MonoBehaviour
 
 void UpdateSnowSpeed(float value)
 {
-    // Control particle emission rate dynamically
     var emission = snowParticles.emission;
     emission.rateOverTime = value * 200f; // Increased from 100 to 200 for more particles
 
-    // Increase snow cover rate
     snowCoverSpeed = Mathf.Lerp(0.01f, 0.2f, value); // Adjustable range
 }
 
-
-
-    void StartSnow()
+protected override void StartWeather()
 {
     isSnowing = true;
-    snowSpeedSlider.interactable = true;
 
     // Shader starts fresh
     snowLevel = 0f;
@@ -106,18 +89,14 @@ IEnumerator FadeInSnowParticles(float duration = 3f)
 
     emission.rateOverTime = targetRate;
 }
-
-
-    void StopSnow()
+    protected override void StopWeather()
     {
         isSnowing = false;
-        snowSpeedSlider.interactable = false;
 
         if (snowParticles.isPlaying)
             snowParticles.Stop();
     }
-
-    void ToggleDayNight()
+     void Toggle()
     {
         isDay = !isDay;
         StopAllCoroutines();
@@ -128,7 +107,7 @@ IEnumerator FadeInSnowParticles(float duration = 3f)
             isDay ? dayColor : nightColor));
     }
 
-    System.Collections.IEnumerator FadeSkyColor(Color from, Color to)
+    IEnumerator FadeSkyColor(Color from, Color to)
     {
         float elapsed = 0f;
         while (elapsed < colorLerpTime)

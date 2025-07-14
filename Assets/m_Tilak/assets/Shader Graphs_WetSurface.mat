@@ -31,7 +31,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _diffuse:
-        m_Texture: {fileID: 2800000, guid: 17b389a43b5c54f47b98cf0fe492cc4b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 40f13cb71f7f83d4e98a4ac49607fbd8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _normal:
@@ -115,11 +115,11 @@ Material:
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
-    - _opacity: 1
+    - _opacity: 0
     m_Colors:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainTiling: {r: 10, g: 2, b: 0, a: 0}
+    - _MainTiling: {r: 1, g: 1, b: 0, a: 0}
     - _SmoothTilling: {r: 0.3, g: -0.22, b: 0, a: 0}
     - _rippleTiling: {r: 204, g: 200, b: 0, a: 0}
     - _ripplespeed: {r: 0.4, g: 0.2, b: 0, a: 0}

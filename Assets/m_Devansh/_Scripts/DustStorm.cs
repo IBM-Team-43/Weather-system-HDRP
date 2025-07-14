@@ -13,7 +13,8 @@ public class DustStorm : WeatherBase
     [SerializeField] private VolumeProfile fogVolume;
     [SerializeField] private float fadeDuration = 1f;
     
-    [SerializeField] private LocalVolumetricFog localFog;
+    [SerializeField] private ParticleSystem dustStormParticleSystem;
+    
     private Fog _fog;
     private FogSettings fog;
     private struct FogSettings
@@ -25,8 +26,8 @@ public class DustStorm : WeatherBase
         private readonly float _baseHeight;
         private readonly float _maximumHeight;
         private readonly bool _enableVolumetricFog;
-        private FogColorParameter _colorMode;
-        private readonly ColorParameter _tintColor;
+        private readonly FogColorMode _colorMode;
+        private readonly Color _tintColor;
         private readonly float _mipFogMaxMipLevel;
         private readonly Color _albedo;
         private readonly float _volumetricFogDistance;
@@ -42,8 +43,8 @@ public class DustStorm : WeatherBase
             _baseHeight = fog.baseHeight.value;
             _maximumHeight = fog.maximumHeight.value;
             _enableVolumetricFog = fog.enableVolumetricFog.value;
-            _colorMode = fog.colorMode;
-            _tintColor = fog.tint;
+            _colorMode = fog.colorMode.value;
+            _tintColor = fog.tint.value;
             _mipFogMaxMipLevel = fog.mipFogMaxMip.value;
             _albedo = fog.albedo.value;
             _volumetricFogDistance = fog.depthExtent.value;
@@ -58,7 +59,8 @@ public class DustStorm : WeatherBase
             fog.meanFreePath.value = _meanFreePath;
             fog.baseHeight.value = _baseHeight;
             fog.maximumHeight.value = _maximumHeight;
-            fog.tint = _tintColor;
+            fog.colorMode.value = _colorMode;
+            fog.tint.value = _tintColor;
             fog.mipFogMaxMip.value = _mipFogMaxMipLevel;
             fog.enableVolumetricFog.value = _enableVolumetricFog;
             fog.albedo.value = _albedo;
@@ -68,13 +70,14 @@ public class DustStorm : WeatherBase
         }
         public void LerpFogSettings(Fog fog, float duration)
         {
+            Debug.Log("Lerping Fog Settings");
             fog.enabled.value = true;
             fog.active = _active;
             fog.enableVolumetricFog.value = _enableVolumetricFog;
             Tween.Custom(fog.meanFreePath.value, _meanFreePath, duration, newVal => fog.meanFreePath.value = newVal);
             Tween.Custom(fog.baseHeight.value, _baseHeight, duration, newVal => fog.baseHeight.value = newVal);
             Tween.Custom(fog.maximumHeight.value, _maximumHeight, duration, newVal => fog.maximumHeight.value = newVal);
-            Tween.Custom(fog.tint.value, _tintColor.value, duration, newVal => fog.tint.value = newVal);
+            Tween.Custom(fog.tint.value, _tintColor, duration, newVal => fog.tint.value = newVal);
             Tween.Custom(fog.anisotropy.value, _anisotropy, duration, newVal => fog.anisotropy.value = newVal);
             Tween.Custom(fog.multipleScatteringIntensity.value, _multipleScatteringIntensity, duration, newVal => fog.multipleScatteringIntensity.value = newVal);
             Tween.Custom(fog.albedo.value, _albedo, duration,newVal => fog.albedo.value = newVal);
