@@ -5279,6 +5279,70 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1181088055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &136669948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 136669949}
+  - component: {fileID: 136669950}
+  m_Layer: 0
+  m_Name: ApiWeatherGenerater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &136669949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136669948}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 939969545}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &136669950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136669948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b20a23152d44783be8f2fc75827df7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onWeatherChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2078727827}
+        m_TargetAssemblyTypeName: m_Devansh._Scripts.WeatherManager, Assembly-CSharp
+        m_MethodName: SwitchWeather
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  apiKeySo: {fileID: 11400000, guid: d75e2c6a40fb3bd48892f71e2ec16191, type: 2}
+  city: Nawabshah
+  useMyLocation: 1
+  latitude: 28.6139
+  longitude: 77.209
 --- !u!1 &204174605
 GameObject:
   m_ObjectHideFlags: 0
@@ -14940,6 +15004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 613890217}
   - component: {fileID: 613890216}
+  - component: {fileID: 613890218}
   m_Layer: 0
   m_Name: DustStorm
   m_TagString: Untagged
@@ -14964,8 +15029,20 @@ MonoBehaviour:
   onWeatherEnabled:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1632463818}
-        m_TargetAssemblyTypeName: UnityEngine.VFX.VisualEffect, UnityEngine
+      - m_Target: {fileID: 1632463816}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 715927964}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -14976,8 +15053,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 715927964}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+      - m_Target: {fileID: 613890218}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -14991,10 +15068,10 @@ MonoBehaviour:
   onWeatherDisabled:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1632463818}
-        m_TargetAssemblyTypeName: UnityEngine.VFX.VisualEffect, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
+      - m_Target: {fileID: 1632463816}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15005,6 +15082,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 715927964}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 613890218}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
@@ -15035,6 +15124,155 @@ Transform:
   - {fileID: 715927962}
   m_Father: {fileID: 674587266}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &613890218
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613890215}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 112fc453d9e4ebe41bae1db402cb2dca, type: 3}
+  m_Resource: {fileID: 8300000, guid: 112fc453d9e4ebe41bae1db402cb2dca, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &641481243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641481244}
+  - component: {fileID: 641481245}
+  m_Layer: 0
+  m_Name: Sunny
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &641481244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641481243}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 674587266}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &641481245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641481243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b7f4b50a7b4449abd41f40f3125421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weatherType: 0
+  cloudPreset: 0
+  onWeatherEnabled:
+    m_PersistentCalls:
+      m_Calls: []
+  onWeatherDisabled:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &674587265
 GameObject:
   m_ObjectHideFlags: 0
@@ -15069,6 +15307,8 @@ Transform:
   - {fileID: 613890217}
   - {fileID: 2097460798}
   - {fileID: 2008013683}
+  - {fileID: 641481244}
+  - {fileID: 1497978022}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &684615201
@@ -15080,105 +15320,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 939969545}
     m_Modifications:
     - target: {fileID: 1859507006888813130, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: onWeatherChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1859507006888813130, guid: e5f61ac1eda2769498879da72604e918, type: 3}
       propertyPath: onWeatherChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2078727827}
-    - target: {fileID: 1859507006888813130, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: onWeatherChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1859507006888813130, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: onWeatherChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchWeather
-      objectReference: {fileID: 0}
-    - target: {fileID: 1859507006888813130, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: onWeatherChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: m_Devansh._Scripts.WeatherManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1859507006888813130, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: onWeatherChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5828739011879750449, guid: e5f61ac1eda2769498879da72604e918, type: 3}
       propertyPath: m_Name
       value: SeasonalClock
-      objectReference: {fileID: 0}
-    - target: {fileID: 5828739011879750449, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: sun
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: timeOfDay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: currentDay
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: currentHour
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: currentYear
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: currentMonth
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: currentMinute
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: currentSecond
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: currentDayOfYear
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: dayLengthInSeconds
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: onTimeChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
       propertyPath: onTimeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2078727827}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: onTimeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: onTimeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetTime
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: onTimeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: m_Devansh._Scripts.WeatherManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
-      propertyPath: onTimeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8652982653516882612, guid: e5f61ac1eda2769498879da72604e918, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -20092,6 +20244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1226189601}
+  - {fileID: 136669949}
   - {fileID: 2078727826}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25193,6 +25346,58 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4233eb875e872fe44ab8eef1532cc271, type: 3}
+--- !u!1 &1497978021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1497978022}
+  - component: {fileID: 1497978023}
+  m_Layer: 0
+  m_Name: Cloudy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1497978022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497978021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 674587266}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1497978023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497978021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eea9c22c1b462cb2c79a2252c85716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weatherType: 6
+  cloudPreset: 1
+  onWeatherEnabled:
+    m_PersistentCalls:
+      m_Calls: []
+  onWeatherDisabled:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1519986531
 GameObject:
   m_ObjectHideFlags: 0
@@ -25329,7 +25534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!73398921 &1632463817
 VFXRenderer:
   serializedVersion: 1
@@ -25338,7 +25543,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632463816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -30912,6 +31117,8 @@ MonoBehaviour:
   - {fileID: 1572790142}
   - {fileID: 2097460799}
   - {fileID: 1519986533}
+  - {fileID: 641481245}
+  - {fileID: 1497978023}
   sunCalculator: {fileID: 95661343}
   windDirection: {x: 0, y: 0}
   globalVolume: {fileID: 113922469}

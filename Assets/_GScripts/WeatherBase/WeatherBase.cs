@@ -45,5 +45,5 @@ public abstract class WeatherBase : MonoBehaviour
 public enum WeatherType
 {
     Sunny, Rainy, Snow, Thunder,
-    Fog, DustStorm
+    Fog, DustStorm,Cloudy
 }

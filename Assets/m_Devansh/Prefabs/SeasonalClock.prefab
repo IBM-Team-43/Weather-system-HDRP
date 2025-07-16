@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8652982653516882612
 Transform:
   m_ObjectHideFlags: 0
@@ -45,14 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85d497e5b056f14cb0e79b704bc8140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOfDay: 12
-  dayOfYear: 1
-  dayLengthInSeconds: 60
+  dayLengthInSeconds: 10
+  currentYear: 1
+  currentMonth: 2
+  currentDay: 3
+  currentHour: 11
+  currentMinute: 22
+  currentSecond: 27
+  currentDayOfYear: 0
   sun: {fileID: 0}
-  sunRotationAxis: {x: 1, y: 0, z: 0}
   timeText: {fileID: 0}
-  seasonText: {fileID: 0}
-  monthText: {fileID: 0}
+  dateText: {fileID: 0}
   customSeasons:
   - season: 0
     startDay: 80
@@ -66,8 +69,21 @@ MonoBehaviour:
   - season: 3
     startDay: 355
     endDay: 79
-  currentSeason: 0
-  currentMonth: 0
+  onTimeChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: m_Devansh._Scripts.WeatherManager, Assembly-CSharp
+        m_MethodName: SetTime
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1859507006888813130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +96,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9fd3641e894574e826db4471a9facf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onWeatherChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: m_Devansh._Scripts.WeatherManager, Assembly-CSharp
+        m_MethodName: SwitchWeather
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   clock: {fileID: 8136245771063286020}
   seasonalWeatherChances:
   - season: 0
@@ -90,4 +121,3 @@ MonoBehaviour:
     weatherData: {fileID: 11400000, guid: defd83057c1a1f74294369769bda53f0, type: 2}
   - season: 3
     weatherData: {fileID: 11400000, guid: 6bf59d4fd1fb362488f9724ed89ee603, type: 2}
-  todayWeather: 0

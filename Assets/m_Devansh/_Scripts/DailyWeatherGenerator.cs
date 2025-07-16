@@ -1,7 +1,8 @@
+using m_Devansh._Scripts;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DailyWeatherGenerator : MonoBehaviour
+public class DailyWeatherGenerator : WeatherGenerator
 {
     [System.Serializable]
     public struct WeathersProbability
@@ -16,7 +17,6 @@ public class DailyWeatherGenerator : MonoBehaviour
 
     [Header("Current Weather")]
     private WeatherType _todayWeather;
-    public UnityEvent<WeatherType> onWeatherChanged;
     public WeatherType todayWeather
     {
         get => _todayWeather;
