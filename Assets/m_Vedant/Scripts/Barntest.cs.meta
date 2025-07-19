@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 5475d6005a84ccb4598b499d07dff936
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hoeItem: {fileID: 11400000, guid: 45c6f41d4ee4f654ea39289e37167f17, type: 2}
+  - tomatoSeedItem: {fileID: 11400000, guid: 6e0921d7ee2d2a140b10aae1d9f6d7ac, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
