@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using System.Linq;
 
-public class PlayerInventory : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
     public int gold = 100;
     public List<Item> items = new List<Item>();

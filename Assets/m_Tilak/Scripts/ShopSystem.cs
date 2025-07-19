@@ -18,7 +18,7 @@ public class ShopSystem : MonoBehaviour
     public List<Item> shopItems = new List<Item>();
 
     [Header("Player References")]
-    public PlayerInventory playerInventory;
+    public Inventory playerInventory;
 
     private bool isPlayerInZone = false;
 
@@ -31,7 +31,7 @@ public class ShopSystem : MonoBehaviour
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
-                playerInventory = player.GetComponent<PlayerInventory>();
+                playerInventory = player.GetComponent<Inventory>();
         }
 
         UpdateGoldDisplay();
