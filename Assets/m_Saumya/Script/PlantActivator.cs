@@ -165,10 +165,10 @@ public class PlantActivator : MonoBehaviour
         switch (currentCrop)
         {
             case CropType.Tomato:
-                currentPlant = Instantiate(midTomatoPrefab, new Vector3(transform.position.x, -3.07f, transform.position.z), Quaternion.identity);
+                currentPlant = Instantiate(midTomatoPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
                 break;
             case CropType.Corn:
-                currentPlant = Instantiate(midCornPrefab, new Vector3(transform.position.x, -2.78f, transform.position.z), Quaternion.identity);
+                currentPlant = Instantiate(midCornPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
                 break;
         }
 
@@ -180,11 +180,11 @@ public class PlantActivator : MonoBehaviour
         switch (currentCrop)
         {
             case CropType.Tomato:
-                currentPlant = Instantiate(fullTomatoPrefab, new Vector3(transform.position.x, -2.98f, transform.position.z), Quaternion.identity);
+                currentPlant = Instantiate(fullTomatoPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
                 currentPlant.name = "FullTomato";
                 break;
             case CropType.Corn:
-                currentPlant = Instantiate(fullCornPrefab, new Vector3(transform.position.x, -2.802f, transform.position.z), Quaternion.identity);
+                currentPlant = Instantiate(fullCornPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
                 currentPlant.name = "FullCorn";
                 break;
         }
