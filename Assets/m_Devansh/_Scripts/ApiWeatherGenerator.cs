@@ -20,7 +20,7 @@ namespace m_Devansh._Scripts
             $"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={apiKey}" 
             : $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={apiKey}";
 
-        private async void Start()
+        private async void OnEnable()
         {
             if(useMyLocation)
             {

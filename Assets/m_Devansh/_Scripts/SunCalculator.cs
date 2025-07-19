@@ -86,36 +86,27 @@ namespace nminhhoangit.SunCalculator
         {
             try
             {
-                // Setup Observer & AstroTime
                 Observer observer = new Observer(latitude, longtitude, 0);
                 AstroTime time = new AstroTime(new DateTime(year, month, day, hour, minute, second));
 
-                // Coordinate Sun seen from Earth
                 Equatorial equ_ofdate = Astronomy.Equator(Body.Sun, time, observer, EquatorEpoch.OfDate, Aberration.Corrected);
                 Topocentric hor = Astronomy.Horizon(time, observer, equ_ofdate.ra, equ_ofdate.dec, Refraction.Normal);
 
-                // Calculate object position based on azimuth, altitude, and distance from pillar
                 Vector3 objectPosition = CalculateObjectPosition((float)hor.azimuth, (float)hor.altitude);
 
-                // Update Sun's position & light with pillar
                 if (pillar != null)
                 {
-                    // Offset distance position from pillar position
                     objectPosition = objectPosition * offsetDistance + pillar.position;
                
-                    // Point light direction to the pillar
                     transform.LookAt(pillar);
                 }
                 else
                 {
-                    // Offset distance position
                     objectPosition = objectPosition * offsetDistance;
 
-                    // Point light direction to the center of the scene instead
                     transform.LookAt(Vector3.zero, Vector3.up);
                 }
 
-                // Set object position
                 transform.position = objectPosition;
             }
             catch (Exception ex)
