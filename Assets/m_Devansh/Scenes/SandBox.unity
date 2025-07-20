@@ -5689,9 +5689,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  apiKeySo: {fileID: 11400000, guid: d75e2c6a40fb3bd48892f71e2ec16191, type: 2}
-  city: Nawabshah
-  useMyLocation: 1
+  apiKeySo: {fileID: 11400000, guid: 2bf36bd5771d88a4494895722cd7721b, type: 2}
+  city: "Troms\xF8"
+  useMyLocation: 0
   latitude: 28.6139
   longitude: 77.209
 --- !u!1 &142341827 stripped
