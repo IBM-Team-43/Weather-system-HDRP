@@ -5646,7 +5646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &136669949
 Transform:
   m_ObjectHideFlags: 0
@@ -11733,43 +11733,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f506a12a86eb9554db903c9d14aec66b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -80.706
+      value: -80.72878
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f506a12a86eb9554db903c9d14aec66b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.905
+      value: 16.044865
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f506a12a86eb9554db903c9d14aec66b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 55.431
+      value: 55.69608
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f506a12a86eb9554db903c9d14aec66b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9627582
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f506a12a86eb9554db903c9d14aec66b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.2386508
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f506a12a86eb9554db903c9d14aec66b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.030569207
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f506a12a86eb9554db903c9d14aec66b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.12332139
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f506a12a86eb9554db903c9d14aec66b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 26.871
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f506a12a86eb9554db903c9d14aec66b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 7.584
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f506a12a86eb9554db903c9d14aec66b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 16.413
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: f506a12a86eb9554db903c9d14aec66b, type: 3}
       propertyPath: m_StaticShadowCaster
@@ -20288,7 +20288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5828739011879750449, guid: e5f61ac1eda2769498879da72604e918, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
+      propertyPath: dayLengthInSeconds
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8136245771063286020, guid: e5f61ac1eda2769498879da72604e918, type: 3}
       propertyPath: onTimeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -37005,7 +37009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e101f4e0f55e45448aa6bf9a71aec92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxWobble: 5
+  MaxWobble: 2
   WobbleSpeed: 1
   Recovery: 1
 --- !u!1 &1676316875
