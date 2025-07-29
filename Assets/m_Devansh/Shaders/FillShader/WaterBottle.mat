@@ -176,7 +176,7 @@ Material:
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
     - _ExcludeFromTUAndAA: 0
-    - _FillHeight: -0.11
+    - _FillHeight: 0.02
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
     - _HeightMapParametrization: 0
@@ -266,7 +266,7 @@ Material:
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _LiquidColor: {r: 0.19140604, g: 0.28318956, b: 0.98490566, a: 1}
+    - _LiquidColor: {r: 0.19140601, g: 0.28318954, b: 0.98490566, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _SurfaceColor: {r: 0.05072975, g: 0.15868771, b: 0.3584906, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}

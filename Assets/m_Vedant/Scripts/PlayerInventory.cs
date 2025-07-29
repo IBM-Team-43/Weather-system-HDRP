@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class PlayerInventory
 {
-    private static List<InventoryItem> playerItems = new List<InventoryItem>();
+    private static List<InventoryItem> playerItems = new ();
     private static int maxCapacity = 10;
 
     public static bool AddItem(InventoryItem item)
@@ -30,7 +30,7 @@ public static class PlayerInventory
 
     public static List<InventoryItem> GetAllItems()
     {
-        return new List<InventoryItem>(playerItems);
+        return  new(playerItems);
     }
 
     public static void ClearInventory()

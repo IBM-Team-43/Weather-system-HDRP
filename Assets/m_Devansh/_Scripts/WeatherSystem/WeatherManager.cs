@@ -57,11 +57,11 @@ namespace m_Devansh._Scripts
                 sunCalculator.UpdateDateTimeInputDatas( time);
             }
         }
-        public void SetTime(DateTime time,float longitude , float latitude )
+        public void SetTime(DateTime time,Vector2 loc )
         {
             if (sunCalculator)
             {
-                sunCalculator.UpdateInputDatas(latitude,longitude, time);
+                sunCalculator.UpdateInputDatas(loc.x,loc.y, time);
             }
         }
         private void OnDisable()

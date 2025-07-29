@@ -41,7 +41,7 @@ public class DailyWeatherGenerator : WeatherGenerator
         var season = clock.currentSeason;
         SeasonWeatherData probs = GetSeasonProbabilities(season).weatherData;
         float total = 0;
-        foreach (var weight in probs._weatherWeights)
+        foreach (var weight in probs.weatherWeights)
         {
             total+= weight.weight;
         }
@@ -49,7 +49,7 @@ public class DailyWeatherGenerator : WeatherGenerator
         float roll = Random.Range(0f, total);
         float sum  = 0f;
 
-        foreach (var entry in probs._weatherWeights)
+        foreach (var entry in probs.weatherWeights)
         {
             sum += entry.weight;
             if (roll < sum)

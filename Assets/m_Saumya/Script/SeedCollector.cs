@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using m_Devansh._Scripts.CropSystem;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -9,27 +10,27 @@ public class SeedCollector : MonoBehaviour
 {
     public string seedName;
     public Sprite seedIcon;
-
+    
+    public string promptTextStr;
     public TextMeshProUGUI promptText; 
     public Image heldSeedUI;
 
     private bool playerInRange = false;
-
-    private void Start()
+    public Crop crop;
+    /*private void Start()
     {
         promptText.gameObject.SetActive(false);
         heldSeedUI.gameObject.SetActive(false);
-    }
+    }*/
 
-    private void Update()
+    /*private void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             CollectSeed();  
         }
-    }
-
-private void CollectSeed()
+    }*/
+    private void CollectSeed()
 {
     heldSeedUI.sprite = seedIcon;
     
@@ -39,8 +40,7 @@ private void CollectSeed()
     promptText.gameObject.SetActive(false); 
     Debug.Log($"Picked {seedName} seed!");
 }
-
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -49,7 +49,6 @@ private void CollectSeed()
             promptText.gameObject.SetActive(true);
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -57,5 +56,5 @@ private void CollectSeed()
             playerInRange = false;
             promptText.gameObject.SetActive(false);
         }
-    }
+    }*/
 }

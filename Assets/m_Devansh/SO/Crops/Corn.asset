@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5775c79c724c639d059f0e7f498ba0, type: 3}
+  m_Name: Corn
+  m_EditorClassIdentifier: 
+  currStage: 0
+  cropIcon: {fileID: 21300000, guid: 2e72bdb80c6e1d44b8bb189b06fa3149, type: 3}
+  cropStagesPrefabs:
+  - {fileID: 1117372910967372221, guid: ce50f32b4b7c12b438daa0c2b333ae39, type: 3}
+  - {fileID: 6880707793824526162, guid: ac1484624c63e904ea9c48d4e6d317d7, type: 3}
+  - {fileID: 1400516332409390092, guid: 7199852b378094e47a6d09bfd69349d0, type: 3}
+  cropName: 
+  plantDescription: Press [E] to plant Corn
+  growthTime: 3
+  plantSound: {fileID: 8300000, guid: 94d2b6c1cbfc8c449943614f84677942, type: 3}

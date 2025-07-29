@@ -3,7 +3,7 @@ using UnityEngine;
 public class BarnAreaTrigger : MonoBehaviour
 {
     public GameObject barnInventoryPanel;  // Assign the BarnPanel (inventory UI)
-    public GameObject promptText;          // Assign UI Text like ìPress E to open barn inventoryî
+    public GameObject promptText;          // Assign UI Text like ‚ÄúPress E to open barn inventory‚Äù
 
     private bool isPlayerInside = false;
 

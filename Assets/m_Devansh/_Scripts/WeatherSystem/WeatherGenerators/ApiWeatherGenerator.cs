@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Networking;
 using UnityEngine.Serialization;
 
@@ -19,6 +20,8 @@ namespace m_Devansh._Scripts
         private string url => useMyLocation ? 
             $"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={apiKey}" 
             : $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={apiKey}";
+        
+        public UnityEvent<DateTime,Vector2> onTimeChanged;
 
         private async void OnEnable()
         {
@@ -30,11 +33,10 @@ namespace m_Devansh._Scripts
 
                     longitude = location.lon;
             }
-
-            WeatherType weather = await FetchWeather();
+            onTimeChanged.Invoke(DateTime.Now, new Vector2(latitude, longitude));
+            var weather = await FetchWeather();
             onWeatherChanged.Invoke(weather);
         }
-
         private async Task<LocationInfo> FetchLocation()
         {
             string url = "https://ipinfo.io/json";

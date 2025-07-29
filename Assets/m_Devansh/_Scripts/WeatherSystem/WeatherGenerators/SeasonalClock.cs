@@ -28,7 +28,7 @@ public class SeasonalClock : MonoBehaviour
     public TextMeshProUGUI dateText;
 
     [Header("Season Configuration")]
-    public SeasonRange[] customSeasons = new SeasonRange[4]
+    public SeasonRange[] customSeasons =
     {
         new() { season = Season.Spring, startDay = 80, endDay = 171 },
         new() { season = Season.Summer, startDay = 172, endDay = 265 },
@@ -103,7 +103,13 @@ public class SeasonalClock : MonoBehaviour
         }
         return Season.Winter;
     }
+
     [System.Serializable]
+    public struct Range
+    {
+        public int start;
+        public int end;
+    }
     public struct SeasonRange
     {
         public Season season;

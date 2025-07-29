@@ -1,24 +1,25 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "SeasonWeatherData ", menuName = "Scriptable Objects/SeasonWeatherData ")]
 public class SeasonWeatherData  : ScriptableObject
 {
-    public List<WeatherWeight> _weatherWeights = new();
+    [FormerlySerializedAs("_weatherWeights")] public List<WeatherWeight> weatherWeights = new();
     
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        if(_weatherWeights.Count == Enum.GetValues(typeof(WeatherType)).Length)return;
+        if(weatherWeights.Count == Enum.GetValues(typeof(WeatherType)).Length)return;
         var existingWeights = new HashSet<WeatherType>();
-        _weatherWeights.Clear();
+        weatherWeights.Clear();
 
         // Get all possible weather types (assuming WeatherType is an enum)
         foreach (WeatherType type in Enum.GetValues(typeof(WeatherType)))
         {
             float weight = 0f;
-            _weatherWeights.Add(new WeatherWeight
+            weatherWeights.Add(new WeatherWeight
             {
                 type = type,
                 weight = weight

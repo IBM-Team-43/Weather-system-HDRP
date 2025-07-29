@@ -38,7 +38,6 @@ public class PlantActivator : MonoBehaviour
 
     void Start()
     {
-        promptText.enabled = false;
         harvestText.enabled = false;
 
         audioSource = GetComponent<AudioSource>();
@@ -82,7 +81,16 @@ public class PlantActivator : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                HarvestCrop();
+                var items = PlayerInventory.GetAllItems();
+                foreach (var item in items)
+                {
+                    if (item.itemType == InventoryItem.ItemType.Tool)
+                    {
+                        HarvestCrop();
+                        break;
+                    }
+                }
+                
             }
         }
     }
@@ -127,7 +135,15 @@ public class PlantActivator : MonoBehaviour
             // If crop already grown when player enters
             if (cropReadyToHarvest && IsFullCropReady())
             {
-                ShowHarvestPrompt();
+                var items = PlayerInventory.GetAllItems();
+                foreach (var item in items)
+                {
+                    if (item.itemType == InventoryItem.ItemType.Tool)
+                    {
+                        ShowHarvestPrompt();
+                        break;
+                    }
+                }
             }
         }
     }
@@ -192,7 +208,19 @@ public class PlantActivator : MonoBehaviour
         cropReadyToHarvest = true;
 
         if (playerInRange)
-            ShowHarvestPrompt();
+        {
+            var items = PlayerInventory.GetAllItems();
+            foreach (var item in items)
+            {
+                if (item.itemType == InventoryItem.ItemType.Tool)
+                {
+                    ShowHarvestPrompt();
+                    break;
+                }
+            }
+            
+        }
+            
     }
 
     void HarvestCrop()

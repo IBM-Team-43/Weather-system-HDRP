@@ -42,7 +42,7 @@ public class ItemSlotUI : MonoBehaviour
         }
         else
         {
-            Debug.Log("Couldn't move item — possibly full inventory.");
+            Debug.Log("Couldn't move item â€” possibly full inventory.");
             // Optionally: show warning in UI
         }
     }
