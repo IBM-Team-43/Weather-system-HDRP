@@ -14,8 +14,8 @@ public class InventoryUI : MonoBehaviour
 
     public void RefreshUI()
     {
-        RefreshGrid(barnGridParent, BarnInventory.GetAllItems(), true);
-        RefreshGrid(playerGridParent, PlayerInventory.GetAllItems(), false);
+        /*RefreshGrid(barnGridParent, BarnInventory.GetAllItems(), true);*/
+        /*RefreshGrid(playerGridParent, PlayerInventory.GetAllItems(), false);*/
     }
 
     private void RefreshGrid(Transform parent, List<InventoryItem> items, bool isFromBarn)

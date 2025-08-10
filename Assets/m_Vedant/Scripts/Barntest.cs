@@ -7,10 +7,10 @@ public class BarnTest : MonoBehaviour
 
     void Start()
     {
-        BarnInventory.ClearInventory();
+        /*BarnInventory.ClearInventory();
         PlayerInventory.ClearInventory();
 
         BarnInventory.AddItem(hoe);
-        BarnInventory.AddItem(tomatoSeed);
+        BarnInventory.AddItem(tomatoSeed);*/
     }
 }

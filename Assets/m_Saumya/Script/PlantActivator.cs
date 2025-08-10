@@ -81,16 +81,10 @@ public class PlantActivator : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                var items = PlayerInventory.GetAllItems();
-                foreach (var item in items)
+                if (PlayerStorage.Instance.items.ContainsKey(InventoryItem.ItemType.Tool))
                 {
-                    if (item.itemType == InventoryItem.ItemType.Tool)
-                    {
-                        HarvestCrop();
-                        break;
-                    }
+                    HarvestCrop();
                 }
-                
             }
         }
     }
@@ -135,14 +129,9 @@ public class PlantActivator : MonoBehaviour
             // If crop already grown when player enters
             if (cropReadyToHarvest && IsFullCropReady())
             {
-                var items = PlayerInventory.GetAllItems();
-                foreach (var item in items)
+                if (PlayerStorage.Instance.items.ContainsKey(InventoryItem.ItemType.Tool))
                 {
-                    if (item.itemType == InventoryItem.ItemType.Tool)
-                    {
-                        ShowHarvestPrompt();
-                        break;
-                    }
+                    ShowHarvestPrompt();
                 }
             }
         }
@@ -209,14 +198,9 @@ public class PlantActivator : MonoBehaviour
 
         if (playerInRange)
         {
-            var items = PlayerInventory.GetAllItems();
-            foreach (var item in items)
+            if (PlayerStorage.Instance.items.ContainsKey(InventoryItem.ItemType.Tool))
             {
-                if (item.itemType == InventoryItem.ItemType.Tool)
-                {
-                    ShowHarvestPrompt();
-                    break;
-                }
+                ShowHarvestPrompt();
             }
             
         }

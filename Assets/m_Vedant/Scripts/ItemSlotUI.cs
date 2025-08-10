@@ -20,31 +20,17 @@ public class ItemSlotUI : MonoBehaviour
 
     public void OnClick()
     {
-        if (item == null) return;
-
-        bool moved = false;
-
-        if (isFromBarn)
+        if (PlayerStorage.Instance.items.ContainsKey(item.itemType))
         {
-            moved = PlayerInventory.AddItem(item);
-            if (moved) BarnInventory.RemoveItem(item);
+            PlayerStorage.Instance.RemoveItem(item);
+            BarnStorage.Instance.AddItem(item);
         }
         else
         {
-            BarnInventory.AddItem(item);
-            PlayerInventory.RemoveItem(item);
-            moved = true;
+            BarnStorage.Instance.RemoveItem(item);
+            PlayerStorage.Instance.AddItem(item);
         }
-
-        if (moved)
-        {
-            FindObjectOfType<InventoryUI>()?.RefreshUI();
-        }
-        else
-        {
-            Debug.Log("Couldn't move item — possibly full inventory.");
-            // Optionally: show warning in UI
-        }
+        Destroy(gameObject);
     }
 
 }

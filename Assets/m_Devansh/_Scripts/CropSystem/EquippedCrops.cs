@@ -71,7 +71,8 @@ namespace m_Devansh._Scripts.CropSystem
                         PromptPlanting();
                         break;
                     case PlantArea.CropState.ReadyToHarvest:
-                        harvestAreas.Add(plantArea);
+                        if(PlayerStorage.Instance.items.ContainsKey(InventoryItem.ItemType.Tool))
+                            harvestAreas.Add(plantArea);
                         PromptHarvest();
                         break;
                 }

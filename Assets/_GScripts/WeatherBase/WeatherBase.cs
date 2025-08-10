@@ -1,4 +1,5 @@
 using m_Devansh._Scripts;
+using m_Devansh._Scripts.CropSystem;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering.HighDefinition;
@@ -11,13 +12,14 @@ public abstract class WeatherBase : MonoBehaviour
         public WeatherType weatherType;
         protected bool IsEnabled = false;
         public VolumetricClouds.CloudPresets cloudPreset = VolumetricClouds.CloudPresets.Cloudy;
-        
+        public float plantGrowthSpeed = 1f;
         public UnityEvent onWeatherEnabled;
         public UnityEvent onWeatherDisabled;
         protected abstract void StartWeather();
         protected abstract void StopWeather();
         public void EnableWeather()
         {
+            PlantArea.growthMultiplier = plantGrowthSpeed;
             if (!CanEnableWeather()) return;
             IsEnabled = true;
             StartWeather();
@@ -42,8 +44,6 @@ public abstract class WeatherBase : MonoBehaviour
     
 
 
-public enum WeatherType
-{
-    Sunny, Rainy, Snow, Thunder,
-    Fog, DustStorm,Cloudy
+public enum WeatherType {
+    Sunny, Rainy, Snow, Thunder,Fog, DustStorm,Cloudy
 }

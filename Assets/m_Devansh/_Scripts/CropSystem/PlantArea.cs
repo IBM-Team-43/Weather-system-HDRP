@@ -10,7 +10,7 @@ namespace m_Devansh._Scripts.CropSystem
         public int stage;
         public GameObject cropGO;
         public Crop crop;
-        public float growthMultiplier = 1f; // Multiplier for growth speed
+        public static float growthMultiplier = 1f;
         public AudioSource audioSource;
 
         private void Awake()
@@ -36,12 +36,10 @@ namespace m_Devansh._Scripts.CropSystem
 
                 while (timer < targetTime)
                 {
-                    // Increase timer based on multiplier and deltaTime
                     timer += Time.deltaTime * growthMultiplier;
                     yield return null;
                 }
 
-                // Move to next stage
                 stage++;
                 UpdateCropStage();
                 if(stage == crop.cropStagesPrefabs.Length - 1) break;

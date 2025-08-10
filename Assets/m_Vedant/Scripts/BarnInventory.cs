@@ -1,3 +1,4 @@
+/*
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,3 +29,4 @@ public static class BarnInventory
         Debug.Log("Barn inventory cleared.");
     }
 }
+*/

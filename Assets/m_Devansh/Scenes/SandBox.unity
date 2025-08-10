@@ -5489,147 +5489,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1181088055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &128064433
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1704363397}
-    m_Modifications:
-    - target: {fileID: 1399075610720947354, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 1399075610720947354, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 2327606574228154691, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2327606574228154691, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 128064435}
-    - target: {fileID: 2327606574228154691, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 2327606574228154691, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ItemSlotUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2327606574228154691, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484520044052238510, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-      propertyPath: m_Name
-      value: ItemSlot
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
---- !u!224 &128064434 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3610785977130478923, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-  m_PrefabInstance: {fileID: 128064433}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &128064435 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3097037442361376016, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
-  m_PrefabInstance: {fileID: 128064433}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e742e5bd8c64cb43bc7f60977c048c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &136669948
 GameObject:
   m_ObjectHideFlags: 0
@@ -6087,7 +5946,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &191805907
 GameObject:
@@ -11700,7 +11558,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1001 &309083441
 PrefabInstance:
@@ -12334,7 +12191,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &347222148
 GameObject:
@@ -18131,7 +17987,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1001 &450361514
 PrefabInstance:
@@ -18550,7 +18405,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &495077686
 GameObject:
@@ -19094,7 +18948,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &557779679
 GameObject:
@@ -19293,7 +19146,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &559152135 stripped
 GameObject:
@@ -19513,6 +19365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherType: 5
   cloudPreset: 1
+  plantGrowthSpeed: 0.5
   onWeatherEnabled:
     m_PersistentCalls:
       m_Calls:
@@ -19759,6 +19612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherType: 0
   cloudPreset: 0
+  plantGrowthSpeed: 1
   onWeatherEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -19988,7 +19842,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &662816451 stripped
 GameObject:
@@ -20298,7 +20151,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1001 &684615201
 PrefabInstance:
@@ -25524,7 +25376,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 747313653}
 --- !u!1 &748264897
 GameObject:
@@ -25723,7 +25574,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!65 &750474661
 BoxCollider:
@@ -26128,7 +25978,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1001 &805773676
 PrefabInstance:
@@ -27240,7 +27089,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!65 &913348807
 BoxCollider:
@@ -33496,7 +33344,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &1235777020 stripped
 GameObject:
@@ -33774,7 +33621,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1001 &1265698948
 PrefabInstance:
@@ -34066,7 +33912,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &1317862185
 GameObject:
@@ -34265,7 +34110,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1001 &1319929068
 PrefabInstance:
@@ -34914,7 +34758,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &1394307093 stripped
 GameObject:
@@ -35075,6 +34918,8 @@ GameObject:
   - component: {fileID: 1430142551}
   - component: {fileID: 1430142550}
   - component: {fileID: 1430142549}
+  - component: {fileID: 1430142552}
+  - component: {fileID: 1430142553}
   m_Layer: 0
   m_Name: InventoryManager
   m_TagString: Untagged
@@ -35126,6 +34971,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1430142552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430142548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51872b153ace3e48914a6315e862e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemSlotUI: {fileID: 3097037442361376016, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
+  playerInventoryPanel: {fileID: 894593073}
+  barnInventoryPanel: {fileID: 1704363396}
+--- !u!114 &1430142553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430142548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb0847ae617469f8cbce194a2844f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemSlotUI: {fileID: 3097037442361376016, guid: d8c066d79d713534f9ef5818aedbb45d, type: 3}
+  barnInventoryPanel: {fileID: 1704363396}
+  prestored:
+  - {fileID: 11400000, guid: 45c6f41d4ee4f654ea39289e37167f17, type: 2}
+  - {fileID: 11400000, guid: 82e5bd3eca1a11f43b71a3733ee6f452, type: 2}
 --- !u!1001 &1444360305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35410,7 +35287,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 1471309806}
 --- !u!4 &1491409924 stripped
 Transform:
@@ -35463,6 +35339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherType: 6
   cloudPreset: 1
+  plantGrowthSpeed: 1
   onWeatherEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -35562,6 +35439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherType: 2
   cloudPreset: 2
+  plantGrowthSpeed: 1
   onWeatherEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -35907,6 +35785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherType: 3
   cloudPreset: 3
+  plantGrowthSpeed: 1.5
   onWeatherEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -36113,7 +35992,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &1632463816
 GameObject:
@@ -36528,6 +36406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherType: 4
   cloudPreset: 1
+  plantGrowthSpeed: 0.5
   onWeatherEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -36781,7 +36660,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &1670820710
 GameObject:
@@ -36980,7 +36858,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1001 &1671644184
 PrefabInstance:
@@ -37435,8 +37312,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 128064434}
+  m_Children: []
   m_Father: {fileID: 1379089580}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -38143,7 +38019,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1001 &1782738437
 PrefabInstance:
@@ -43442,7 +43317,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1 &1865196692 stripped
 GameObject:
@@ -44709,7 +44583,6 @@ MonoBehaviour:
   stage: 0
   cropGO: {fileID: 0}
   crop: {fileID: 0}
-  growthMultiplier: 1
   audioSource: {fileID: 185150727}
 --- !u!1001 &2039988332
 PrefabInstance:
@@ -45208,6 +45081,10 @@ PrefabInstance:
       propertyPath: groundGameObject
       value: 
       objectReference: {fileID: 878576964}
+    - target: {fileID: 5813113100962722384, guid: 56ed688bbf1d36240ba4243ac3cd7fda, type: 3}
+      propertyPath: plantGrowthSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5813113100962722384, guid: 56ed688bbf1d36240ba4243ac3cd7fda, type: 3}
       propertyPath: transitionDuration
       value: 3

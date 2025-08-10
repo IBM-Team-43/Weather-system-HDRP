@@ -1,3 +1,4 @@
+/*
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,3 +43,4 @@ public static class PlayerInventory
     public static int GetMaxCapacity() => maxCapacity;
     public static int GetCurrentCount() => playerItems.Count;
 }
+*/
