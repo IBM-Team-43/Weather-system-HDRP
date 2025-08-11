@@ -44321,6 +44321,22 @@ MonoBehaviour:
   currentCropIndex: -1
   cropsList: []
   seedCollector: {fileID: 0}
+--- !u!114 &1994125593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938869934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a829431214b258f4b822aa0df5cc410e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 100
+  items: []
+  goldText: {fileID: 873651863}
+  itemsText: {fileID: 0}
 --- !u!1 &2005199380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4460860007793535293, guid: 19971c8ae6ce7ad4589b81f323dbc71a, type: 3}
@@ -44843,6 +44859,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1994125592}
+    - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1994125593}
     - targetCorrespondingSourceObject: {fileID: 4251274685138929836, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       insertIndex: -1
       addedObject: {fileID: 559463130}
