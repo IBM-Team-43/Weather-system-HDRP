@@ -35,7 +35,12 @@ jobs:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
           
-      # Email notification step
+  # Email notification job
+  notifyOnCompletion:
+    name: Send notification email
+    runs-on: ubuntu-latest
+    needs: buildForAllSupportedPlatforms
+    steps:
       - name: Send build notification email
         uses: dawidd6/action-send-mail@v3
         with:
@@ -43,9 +48,9 @@ jobs:
           server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "Unity Build Completed for ${{ matrix.targetPlatform }}"
-          to: youremail@example.com
-          from: GitHub Actions <youremail@example.com>
+          subject: "All Unity Builds Completed"
+          to: bikkarawat28@gmail.com
+          from: GitHub Actions <bikkarawat28@gmail.com>
           body: |
-            The Unity build for platform "${{ matrix.targetPlatform }}" has completed.
-            Download the build from the GitHub Actions artifacts.
+            ✅ All Unity builds have finished successfully.
+            You can download them from the GitHub Actions artifacts page.
