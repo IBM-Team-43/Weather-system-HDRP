@@ -52,8 +52,7 @@ The primary objective of this project is to design and implement a **Dynamic Wea
 
 # **System Architecture(Weather System):**
 
-<img width="512" height="370" alt="image" src="https://github.com/user-attachments/assets/3880d352-0b4a-473a-98c9-d12ca1fb1441" />
-
+![unnamed](https://github.com/user-attachments/assets/51084bc4-8a71-4704-a6e8-9503984d30a0)
 
 | Dashed Line(----): Inheritance | Solid Line(—): Usage |
 | :---- | :---- |
